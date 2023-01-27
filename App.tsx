@@ -81,6 +81,7 @@ function App(): JSX.Element {
     const client = await DefaultSignClient.getInstance();
 
     //SENDING REQUEST VIA SIGN_CLIENT WORKS
+    //@Gancho Comment out this part to test out universalProvider flow
     const result = await client.request({
       topic: zerion.connection_key,
       chainId: 'eip155:1',
@@ -94,6 +95,7 @@ function App(): JSX.Element {
     });
 
     //FIXME: SENDING REQUEST VIA UNIVERSAL PROVIDER DOESN"T WORK
+    //@Gancho Uncomment this part to test out universalProvider flow
     /* const universalProvider = await DefaultUniversalProvider.getInstance();
     const session = await universalProvider.connect({
       skipPairing: true,
@@ -164,6 +166,7 @@ function App(): JSX.Element {
     const client = await DefaultSignClient.getInstance();
 
     //SENDING REQUEST VIA THE SIGN_CLIENT WORKS
+    //@Gancho comment this out to test universal provider flow
     const result = await client.request({
       topic: trust.connection_key,
       chainId: 'eip155:1',
@@ -177,6 +180,7 @@ function App(): JSX.Element {
     });
 
     //FIXME: SENDING REQUEST VIA UNIVERSAL PROVIDER DOESN'T WORK
+    //@Gancho Uncomment this to try out the universalProvider flow
     /* const universalProvider = await DefaultUniversalProvider.getInstance();
     await universalProvider.connect({
       skipPairing: true,
